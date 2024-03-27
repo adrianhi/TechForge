@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ButtonModule } from 'primeng/button';
 import { Router } from '@angular/router';
-import { serviceData } from '@data/service-cards/servicesCards-data';
+import { serviceData } from '@app/Data/Home/service-cards/servicesCards-data';
 import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-service-cards',

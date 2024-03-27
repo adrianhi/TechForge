@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { carouselData } from '@data/Carousel/carouselData';
+import { carouselData } from '@app/Data/Home/Carousel/carouselData';
 @Component({
   selector: 'app-carousel',
   standalone: true,
