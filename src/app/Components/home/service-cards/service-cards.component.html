@@ -1,0 +1,21 @@
+<section class="services-section my-5">
+  <div class="container">
+    <h2 class="text-center">Why we're the optimal option?</h2>
+    <div class="row mt-5">
+      <div class="col-md-4" *ngFor="let card of serviceDataItem">
+        <div class="card">
+          <img [src]="card.imageUrl" class="card-img-top" [alt]="card.title" />
+          <div class="card-body">
+            <h5 class="card-title">{{ card.title }}</h5>
+            <p class="card-text text-justify">{{ card.description }}</p>
+            <p-button
+              label="Contact us"
+              icon="pi pi-phone"
+              (click)="onContact()"
+            ></p-button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
