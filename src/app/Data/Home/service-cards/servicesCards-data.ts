@@ -8,8 +8,7 @@ export const serviceData = [
   },
   {
     title: 'Web Development',
-    imageUrl:
-      'https://veloxsoftech.com/blog/wp-content/uploads/2021/04/Software-developer.jpg',
+    imageUrl: 'https://www.sectorlink.com/img/blog/web-devel-important.jpg',
     description: 'Complete web development from the backend to the frontend.',
   },
   {

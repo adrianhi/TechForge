@@ -1,0 +1,50 @@
+<div class="container mt-3">
+  <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+    <div class="row mb-3">
+      <div class="col">
+        <div class="form-floating">
+          <input
+            type="text"
+            class="form-control"
+            id="floatingName"
+            placeholder="Name"
+            formControlName="name"
+          />
+          <label for="floatingName">Name</label>
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-floating">
+          <input
+            type="email"
+            class="form-control"
+            id="floatingEmail"
+            placeholder="Email"
+            formControlName="email"
+          />
+          <label for="floatingEmail">Email</label>
+        </div>
+      </div>
+    </div>
+    <div class="row my-4">
+      <div class="col">
+        <span class="p-float-label w-100">
+          <textarea
+            id="float-input"
+            rows="5"
+            cols="30"
+            pInputTextarea
+            class="w-100"
+            formControlName="message"
+          ></textarea>
+          <label for="float-input">Message</label>
+        </span>
+      </div>
+    </div>
+    <div class="row mb-3">
+      <div class="col">
+        <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+      </div>
+    </div>
+  </form>
+</div>

@@ -4,6 +4,7 @@ import { NavbarComponent } from '@components/global/navbar/navbar.component';
 import { ServiceCardsComponent } from '@components/home/service-cards/service-cards.component';
 import { FooterComponent } from '@components/global/footer/footer.component';
 import { ObjectivesComponent } from '@components/home/objectives/objectives.component';
+import { OurTeamComponent } from '@components/home/our-team/our-team.component';
 import { ButtonModule } from 'primeng/button';
 @Component({
   selector: 'app-home',
@@ -15,6 +16,7 @@ import { ButtonModule } from 'primeng/button';
     FooterComponent,
     ObjectivesComponent,
     ButtonModule,
+    OurTeamComponent,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
