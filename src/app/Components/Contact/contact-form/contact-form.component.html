@@ -12,6 +12,14 @@
           />
           <label for="floatingName">Name</label>
         </div>
+        <div
+          *ngIf="
+            contactForm.get('name')?.invalid && contactForm.get('name')?.touched
+          "
+          class="text-danger"
+        >
+          Name is required
+        </div>
       </div>
       <div class="col">
         <div class="form-floating">
@@ -23,6 +31,20 @@
             formControlName="email"
           />
           <label for="floatingEmail">Email</label>
+        </div>
+        <div
+          *ngIf="
+            contactForm.get('email')?.invalid &&
+            contactForm.get('email')?.touched
+          "
+          class="text-danger"
+        >
+          <div *ngIf="contactForm.get('email')?.errors?.['required']">
+            Email is required
+          </div>
+          <div *ngIf="contactForm.get('email')?.errors?.['email']">
+            Please enter a valid email address
+          </div>
         </div>
       </div>
     </div>
@@ -39,6 +61,15 @@
           ></textarea>
           <label for="float-input">Message</label>
         </span>
+        <div
+          *ngIf="
+            contactForm.get('message')?.invalid &&
+            contactForm.get('message')?.touched
+          "
+          class="text-danger"
+        >
+          Message is required
+        </div>
       </div>
     </div>
     <div class="row mb-3">
@@ -47,4 +78,12 @@
       </div>
     </div>
   </form>
+  <div *ngIf="successMessage" class="alert alert-success mt-3" role="alert">
+    {{ successMessage }}
+  </div>
+
+  <!-- Error message -->
+  <div *ngIf="errorMessage" class="alert alert-danger mt-3" role="alert">
+    {{ errorMessage }}
+  </div>
 </div>

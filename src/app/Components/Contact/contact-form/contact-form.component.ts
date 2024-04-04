@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { MessagesModule } from 'primeng/messages';
 import {
   FormControl,
   FormGroup,
@@ -7,16 +8,23 @@ import {
   ReactiveFormsModule,
 } from '@angular/forms';
 import { InputTextareaModule } from 'primeng/inputtextarea';
+import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-contact-form',
   standalone: true,
-  imports: [InputTextareaModule, ReactiveFormsModule],
+  imports: [
+    InputTextareaModule,
+    ReactiveFormsModule,
+    MessagesModule,
+    CommonModule,
+  ],
   templateUrl: './contact-form.component.html',
   styleUrl: './contact-form.component.css',
 })
 export class ContactFormComponent {
   contactForm: FormGroup;
-
+  successMessage: string = '';
+  errorMessage: string = '';
   constructor(private http: HttpClient) {
     this.contactForm = new FormGroup({
       name: new FormControl(null, Validators.required),
@@ -33,9 +41,14 @@ export class ContactFormComponent {
         .subscribe(
           (response) => {
             console.log('Response from server:', response);
+            this.successMessage = 'Form submitted successfully!';
+            this.errorMessage = '';
+            this.contactForm.reset();
           },
           (error) => {
             console.error('Error occurred while fetching data:', error);
+            this.errorMessage = 'Error occurred while submitting the form.';
+            this.successMessage = '';
           }
         );
     }
