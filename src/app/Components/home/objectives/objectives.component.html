@@ -1,0 +1,14 @@
+<section class="techforge-section bg-light py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4" *ngFor="let objective of objectItem">
+        <div class="mission-section">
+          <h2>{{ objective.title }}</h2>
+          <p>
+            {{ objective.description }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

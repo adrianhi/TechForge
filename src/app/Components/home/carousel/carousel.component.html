@@ -1,0 +1,62 @@
+@defer(){
+<!-- Carousel Container -->
+<div id="carouselExampleCaptions" class="carousel slide carousel-fade">
+  <!-- Carousel Indicators -->
+  <div class="carousel-indicators">
+    <button
+      type="button"
+      *ngFor="let item of carouselItem; let i = index"
+      [class.active]="i === 0"
+      [attr.data-bs-target]="'#carouselExampleCaptions'"
+      [attr.data-bs-slide-to]="i"
+      [attr.aria-current]="i === 0 ? 'true' : null"
+      [attr.aria-label]="'Slide ' + (i + 1)"
+    ></button>
+  </div>
+
+  <!-- Carousel Inner -->
+  <div class="carousel-inner">
+    <div
+      class="carousel-item"
+      *ngFor="let item of carouselItem; let i = index"
+      [class.active]="i === 0"
+    >
+      <!-- Slide Image -->
+      <img
+        [src]="item.imageUrl"
+        class="d-block w-100"
+        [attr.alt]="'Slide ' + (i + 1)"
+      />
+
+      <!-- Slide Caption -->
+      <div class="carousel-caption d-none d-md-block">
+        <h5>{{ item.captionTitle }}</h5>
+        <p>{{ item.captionText }}</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Carousel Control - Previous -->
+  <button
+    class="carousel-control-prev"
+    type="button"
+    [attr.data-bs-target]="'#carouselExampleCaptions'"
+    data-bs-slide="prev"
+  >
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+
+  <!-- Carousel Control - Next -->
+  <button
+    class="carousel-control-next"
+    type="button"
+    [attr.data-bs-target]="'#carouselExampleCaptions'"
+    data-bs-slide="next"
+  >
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+} 
